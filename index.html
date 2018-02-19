@@ -14,16 +14,51 @@
 </head>
 
 <body>
-  <!-- Image and text -->
-  <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-      <img src="assets/images/favicon.png" width="30" height="30" class="d-inline-block align-top" alt=""> Bootstrap
-    </a>
-  </nav>
   <section>
-    <div id="map">
-
-    </div>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 d-none d-sm-block">
+            <img class="d-block w-100 img-fluid" src="assets/images/gif-uber.gif" alt="First slide">
+          </div>
+          <div class="col-sm-5 offset-sm-1">
+            <form>
+              <div class="text-center margin-title">
+                <h2>Insta Collage</h2>
+                <img src="assets/images/insta.png" alt="" class="logo-insta">
+              </div>
+              <div class="form-group">
+                <span class="d-none" id="email-popover">Tu correo electrónico</span>
+                <label class="font-weight-bold" for="exampleInputEmail1">Ingrese su correo electrónico</label>
+                <input type="email" class="form-control" id="input-email" aria-describedby="emailHelp" placeholder="correo electrónico">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                <span class="d-none" id="password-popover">Ingresa mínimo 6 carácteres</span>
+                <label class="font-weight-bold" for="exampleInputPassword1">Contraseña</label>
+                <input type="password" class="form-control" id="input-password" placeholder="contraseña">
+              </div>
+              <div class="form-check text-center">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label font-weight-bold" for="exampleCheck1">Check me out</label>
+              </div>
+              <div class="text-center btn-margin">
+                <button id="login-btn" type="submit" class="btn btn-primary bg-transparent border-white text-center font-weight-bold" disabled>Iniciar sesión</button>
+              </div>
+              <hr>
+              <div class="text-center btn-margin">
+                <button id="login-google" type="submit" class="btn btn-primary rounded-circle sociales">
+                  <i class="fab fa-google"></i>
+                </button>
+                <button id="login-facebook" type="submit" class="btn btn-primary rounded-circle sociales">
+                  <i class="fab fa-facebook-f"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
   </section>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
