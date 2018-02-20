@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Concert One', cursive;
 }
 
 body {
@@ -10,6 +11,17 @@ body {
   background: #040204;
 }
 
+.mg-top {
+  margin-top: 4rem;
+}
+
+.btn-estimate {
+  font-size: 1.3rem;
+  font-weight: 600;
+  background-color: white;
+  color: #040204;
+  border: 0.2rem dashed gray;
+}
 
 
 @media (min-width: 992px) { 
