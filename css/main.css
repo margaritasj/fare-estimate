@@ -19,6 +19,14 @@ body {
   font-family: 'Concert One', cursive;
 }
 
+.btn-estimate {
+  font-size: 1.3rem;
+  font-weight: 600;
+  background-color: white;
+  color: #040204;
+  border: 0.2rem dashed gray;
+}
+
 nav.navbar {
   font-family: 'PT Sans', sans-serif;
   background: #040204;
@@ -38,14 +46,8 @@ nav.navbar {
   margin-bottom: 0.5rem;
 }
 
-
-
-.btn-estimate {
-  font-size: 1.3rem;
-  font-weight: 600;
-  background-color: white;
-  color: #040204;
-  border: 0.2rem dashed gray;
+#map {
+  height: 86vh;
 }
 
 @media (min-width: 992px) {
