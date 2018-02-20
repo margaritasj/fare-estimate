@@ -1,14 +1,24 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Concert One', cursive;
 }
 
 body {
   height: 100vh;
   background-repeat: no-repeat;
   background: #040204;
+}
+
+.font-concert {
+  font-family: 'Concert One', cursive;
+}
+
+nav.navbar {
+  font-family: 'PT Sans', sans-serif;
+  background: #040204;
+  margin-bottom: 1rem;
+  z-index: 700;
 }
 
 .mg-top {
@@ -23,14 +33,6 @@ body {
   border: 0.2rem dashed gray;
 }
 
+@media (min-width: 992px) {
 
-@media (min-width: 992px) { 
-
-  .margin-title {
-    margin:2.6rem;
-  }
-
-  .btn-margin {
-    margin:2rem;
-  }
 }
