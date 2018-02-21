@@ -39,7 +39,7 @@ nav.navbar {
 }
 
 .pd-general {
-  padding: 0.3rem;
+  padding: 0.2rem;
 }
 
 .mg-card {
@@ -52,6 +52,6 @@ nav.navbar {
 
 @media (min-width: 992px) {
 .card {
-  width: 25rem;
+  width: 21rem;
 }
 }

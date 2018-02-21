@@ -28,14 +28,11 @@ function initMap() {
     animation: google.maps.Animation.DROP,
     map: map
   });
-/////////////////////////////////////
-  var infowindow = new google.maps.InfoWindow();
+
   var service = new google.maps.places.PlacesService(map);
-////////////////////////////////////
-  var positionInitial = document.getElementById('btn-geolocation');
 
   // Realizamos el llamado al evento load para que pueda ubicarme al momento que carge la pagina
-  positionInitial.addEventListener('click', function() {
+  window.addEventListener('load', function () {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(getCoords, errorFound);
     } else {
@@ -71,13 +68,11 @@ function initMap() {
   let destinationPoint = document.getElementById('input-destination');
 
   // Usando la libraría Autocomplete para el autocompletado de los lugares
-  var autocomplete_star = new google.maps.places.Autocomplete(originPoint);
-  var autocomplete_end = new google.maps.places.Autocomplete(destinationPoint);
-  // Usando la libraría Autocomplete para el autocompletado de los lugares
-  autocomplete_star.bindTo('bounds', map);
-  autocomplete_end.bindTo('bounds', map);
-
-  console.log(google.maps.places.Autocomplete());
+  var autocompleteStar = new google.maps.places.Autocomplete(originPoint);
+  var autocompleteEnd = new google.maps.places.Autocomplete(destinationPoint);
+  // 
+  autocompleteStar.bindTo('bounds', map);
+  autocompleteEnd.bindTo('bounds', map);
 
   // Evento que traza la ruta y obtiene información de lo ruta,
   let btnRoute = document.getElementById('trace-route');
@@ -89,22 +84,28 @@ function initMap() {
       origin: originPoint.value,
       destination: destinationPoint.value,
       travelMode: 'DRIVING',
-    }
+    };
 
-    console.log(request);
-    console.log(request.origin);
-    console.log(request.destination);
+    $('.prices-element').remove();
+    geocodeAddressStar(geocoder, map);
+    geocodeAddressEnd(geocoder, map);
+
+    var latitudeOr = localStorage.latOrig;
+    var longitudeOr = localStorage.longOrig;
+    var latitudeDes = localStorage.latDestiny;
+    var longitudeDes = localStorage.longDestiny;
+    getEstimatesForUserLocation(latitudeOr, longitudeOr, latitudeDes, longitudeDes);
 
     function callback(result, status) {
-
       if (status === 'OK') {
         directionsDisplay.setDirections(result);
         let distance = result.routes[0].legs[0].distance.value;
       } else {
         window.alert('No encontramos la ruta');
       }
-    }
-
+    };
     directionsService.route(request, callback);
-  }
-}
+  };
+
+
+};
