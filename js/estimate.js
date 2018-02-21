@@ -28,6 +28,15 @@ function getEstimatesForUserLocation(latitudeOrigin, longitudeOrigin, latitudeDe
     success: function (result) {
       console.log(result);
       /* Resultado de los prices */
+      result.prices.forEach(function (element) {
+
+        let template;
+        template = `<div class="row prices-element">
+                               <div class="col-6"><p>${element.localized_display_name}</p></div>
+                               <div class="col-6"><p>${element.estimate}</p></div>
+                             </div>`;
+        cardPrices.prepend(template);
+      });
     }
   });
 };
