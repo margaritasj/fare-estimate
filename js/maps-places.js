@@ -32,7 +32,7 @@ function initMap() {
   var service = new google.maps.places.PlacesService(map);
 
   // Realizamos el llamado al evento load para que pueda ubicarme al momento que carge la pagina
-  window.addEventListener('load', function () {
+  window.addEventListener('load', function() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(getCoords, errorFound);
     } else {
@@ -108,7 +108,20 @@ function initMap() {
   };
 
   /* geocodeAddressStar(geocoder, map); */
-
+  function geocodeAddressStar(geocoder, resultsMap) {
+    var addressStar = originPoint.value;
+    geocoder.geocode({
+      'address': addressStar
+    }, function (results, status) {
+      if (status === 'OK') {
+        longOrig = results[0].geometry.location.lng();
+        latOrig = results[0].geometry.location.lat();
+        localStorage.longOrig = longOrig;
+        localStorage.latOrig = latOrig;
+      } else {
+        alert('Geocode no tuvo éxito por la siguiente razón: ' + status);
+      }
+    });
+  }
   /* geocodeAddressEnd(geocoder, map); */
-
 };
