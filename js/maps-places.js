@@ -124,4 +124,19 @@ function initMap() {
     });
   }
   /* geocodeAddressEnd(geocoder, map); */
+  function geocodeAddressEnd(geocoder, resultsMap) {
+    var addressEnd = destinationPoint.value;
+    geocoder.geocode({
+      'address': addressEnd
+    }, function(results, status) {
+      if (status === 'OK') {
+        longDestiny = results[0].geometry.location.lng();
+        latDestiny = results[0].geometry.location.lat();
+        localStorage.longDestiny = longDestiny;
+        localStorage.latDestiny = latDestiny;
+      } else {
+        alert('Geocode no tuvo éxito por la siguiente razón: ' + status);
+      }
+    });
+  }
 };
