@@ -10,3 +10,24 @@ var starLongitude;
 var endLatitude;
 var endLongitude;
 
+function getEstimatesForUserLocation(latitudeOrigin, longitudeOrigin, latitudeDestiny, longitudeDestiny) {
+  var proxy = 'https://cors-anywhere.herokuapp.com/';
+  var apiUber = 'https://api.uber.com/v1/estimates/price';
+
+  $.ajax({
+    url: proxy + apiUber,
+    headers: {
+      Authorization: 'Token' + tokenServerUber
+    },
+    data: {
+      startLatitude: latitudeOrigin,
+      startLongitude: longitudeOrigin,
+      endLatitude: latitudeDestiny,
+      endLongitude: longitudeDestiny
+    },
+    success: function (result) {
+      console.log(result);
+      /* Resultado de los prices */
+    }
+  });
+};

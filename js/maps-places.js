@@ -107,5 +107,8 @@ function initMap() {
     directionsService.route(request, callback);
   };
 
+  /* geocodeAddressStar(geocoder, map); */
+
+  /* geocodeAddressEnd(geocoder, map); */
 
 };
